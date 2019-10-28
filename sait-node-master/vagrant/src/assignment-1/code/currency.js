@@ -27,34 +27,31 @@ http.createServer((request,response) => {
 
 // console.log(`50 US dollars equals ${currency.USToCanadian(50)} Canadian dollars.`);
 
-const canadianRate = 1.5
-const usRate = .5
-const rateName = CadToUsd || UsdToCad
+function getRate(rateName) {
 
-function CadToUsd() {
+const rateName = 'CadToUsd' || 'UsdToCad'
+
+function CadToUsd(amount) {
+  const rateValue = 1.5;
+  returns (amount * rateValue)
 }
 
-exports.CadToUsd = amount => (amount * canadianRate);
-
-
-function UsdToCad() {
+function UsdToCad(amount) {
+  const rateValue = 0.5;
+  returns (amount * rateValue)
 }
-exports.UsdToCad = amount => (amount * usRate);
-
 
 function setRate(rateName, rateValue) {
-   if(rateName === CadToUsd || UsdToCad) {
-    
-  } 
-}
-
-exports.setRate = rateName, rateValue => (rateValue === 5);
-
-
-function getRate(rateName) {
-  if(rateName === true) {
-    return canadianDollar;
-}
+  if(rateName === 'CadToUsd') {
+    const rateValue = 5;
+    return true && CadToUsd(amount);
+  } else {
+    return false
+  }
+} 
+CadToUsd(amount)
+UsdToCad(amount)
+setRate(rateName, rateValue)
 }
 
 exports.getRate = rateName => (rateName);
